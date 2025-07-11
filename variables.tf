@@ -30,3 +30,8 @@ variable "dynamodb_table_name" {
     type = string
     default = "terraform-lock-table"
 }
+
+variable "vault_token" {
+    description = "Vault root token"
+    type = string
+}

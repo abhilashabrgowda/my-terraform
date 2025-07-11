@@ -31,3 +31,15 @@ output "dynamodb_table_name" {
     value = module.dynamodb_lock_table.dynamodb_table_name
     description = "The name of the DynamoDB table for locking"
 }
+
+output "db_username" {
+    value     = data.vault_kv_secret_v2.db_creds.data["username"]
+    sensitive = true
+}
+
+output "db_password" {
+    value     = data.vault_kv_secret_v2.db_creds.data["password"]
+    sensitive = true
+}
+
+

@@ -17,3 +17,9 @@ module "dynamodb_lock_table" {
     source = "./modules/dynamoDB"
     table_name = var.dynamodb_table_name
 }
+
+data "vault_kv_secret_v2" "db_creds" {
+    mount = "secret"
+    name  = "db"
+}
+

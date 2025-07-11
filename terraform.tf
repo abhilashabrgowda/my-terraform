@@ -17,7 +17,7 @@ terraform {
     }
 }
 
-# ⚠️ If you destroyed everything (including S3 & DynamoDB),
-# temporarily comment out this backend block before applying,
-# then apply to create S3 bucket and DynamoDB table,
-# then uncomment this block and run terraform init and apply again to use remote backend.
+#⚠️ If you destroyed everything (including S3 & DynamoDB),
+#temporarily comment out this backend block before applying,
+#then apply to create S3 bucket and DynamoDB table,
+#then uncomment this block and run terraform init -reconfigure and apply again to use remote backend.
