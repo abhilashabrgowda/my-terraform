@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "my_bucket" {
 resource "aws_s3_bucket_versioning" "versioning" {
     bucket = aws_s3_bucket.my_bucket.id
     versioning_configuration {
-      status = "Enabled"
+      status = "Suspended"
     }
 }
 
@@ -22,3 +22,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {
       }
     }
 }
+
+#If you set status = "Suspended" — it helps you destroy the bucket easily.
+#But if the bucket already had versioning "enabled", you still need to manually delete all old object versions via AWS

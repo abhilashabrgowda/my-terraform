@@ -9,11 +9,11 @@ terraform {
     }
 
     backend "s3" {
-    bucket = "my-bucket-from-module"
-    key = "global/s3/terraform.tfstate"
-    region = "us-east-1"
-    use_lockfile = true
-    encrypt = true
+     bucket = "my-bucket-from-module"
+     key = "global/s3/terraform.tfstate"
+     region = "us-east-1"
+     use_lockfile = true
+     encrypt = true
     }
 }
 
@@ -21,3 +21,5 @@ terraform {
 #temporarily comment out this backend block before applying,
 #then apply to create S3 bucket and DynamoDB table,
 #then uncomment this block and run terraform init -reconfigure and apply again to use remote backend.
+#rm -rf .terraform
+#rm .terraform.lock.hcl
