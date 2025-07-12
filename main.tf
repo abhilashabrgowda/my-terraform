@@ -23,3 +23,13 @@ data "vault_kv_secret_v2" "db_creds" {
     name  = "db"
 }
 
+resource "aws_instance" "k8s_node" {
+    ami = data.aws_ami.k8s.id
+    instance_type = "t2.micro"
+    key_name = "k8s"
+    vpc_security_group_ids = [aws_security_group.web_sg.id]
+    tags = {
+      Name = "ProvisionedEC2"
+    }
+}
+

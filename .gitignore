@@ -1,4 +1,3 @@
-# Terraform state files
 *.tfstate
 *.tfstate.backup
 .terraform/
@@ -9,3 +8,5 @@ override.tf.json
 terraform.tfvars
 *.hcl
 !vault-policy.hcl
+k8s.pem
+install.sh
